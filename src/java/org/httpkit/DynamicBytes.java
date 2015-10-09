@@ -11,6 +11,11 @@ public class DynamicBytes {
         data = new byte[size];
     }
 
+    public void reset() {
+        data = new byte[idx];
+        idx = 0;
+    }
+
     private void expandIfNeeded(int more) {
         if (idx + more > data.length) {
             int after = (int) ((idx + more) * 1.33);
